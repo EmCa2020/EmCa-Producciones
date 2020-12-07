@@ -1,0 +1,50 @@
+/* Base del boton*/
+.btn{
+	text-decoration: none;
+	padding: 5px 10px;
+	font-size: 16px;
+	line-height: 16px;
+	border-radius: 15px;
+}
+/*Tamaños del boton*/
+.btn-peque{
+	font-size: 12px;
+	line-height: 12px;
+	padding: 3px 7px;
+	border-radius: 9px;
+}
+.btn-grande{
+	font-size: 24px;
+	line-height: 24px;
+	padding: 7px 12px;
+	border-radius: 18px;
+}
+.btn-grande i{
+	font-size: 26px;
+}
+/*Colores Boton*/
+.btn-primario{
+	background-color: orange;
+	color: #555555;
+}
+.btn-primario:hover{
+	background-color: #995400;
+	color: #999999;
+}
+
+.btn-peligro{
+	background-color: red;
+	color: #555555;
+}
+.btn-peligro:hover{
+	background-color: #cc0000;
+	color: #999999;
+}
+.btn-aceptar{
+	background-color: #97E73A;
+	color: #555555;
+}
+.btn-aceptar:hover{
+	background-color: #69a128;
+	color: #999999;
+}
