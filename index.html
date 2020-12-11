@@ -22,12 +22,12 @@
   			</div> 
   			</div><br><br><br><br>
   			<div class="iconos">
-  				<div class="contacto"> 
+  				<span class="contacto"> 
   					<a href="#" class="contacto"><i class="fab fa-whatsapp"></i></a>
-  				</div>
-  				<div class="redes">
+  				</span>
+  				<span class="redes">
   					<a href="#" class="redes"><i class="fab fa-facebook"></i></a>
-  				</div>
+  				</span>
   			</div>
   		</div>
   	</header>
@@ -85,12 +85,12 @@
             <h1>EmCa Radio Estudio Online</h1>
             <p>EmCa Producciones espera que tu día a día sea mejor con música, por eso también te brindamos es posibilidad con EmCa Radio Estudio online. Las 24hs de música para vos. ¡Escuchanos!</p>
             <br>
-            <audio controls>
-              <source src="audios/123.mp3" controls="controls" type="audios/mpeg" preload="preload">
-              <source src="audios/123-Sofia.ogg" type="audios/ogg"> 
-                <source src="horse.ogg" type="audio/ogg">
-                <source src="horse.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
+
+            <audio controls="controls">
+            <source src="audios/123.mp3" type="audio/mp3">
+            <source src="audios/123.ogg" type="audio/ogg">
+            <source src="audios/Vacaciones.mp3" type="audio/mp3">
+            <source src="audios/Vacaciones.ogg" type="audio/ogg">
             </audio>
           </div>
       </div>
@@ -129,7 +129,7 @@
 <div class="contenedor-mas-escuchado text-centrado">
   <h3>LO MAS ESCUCHADO</h3>
     <ol>
-      <li>Blinding Lights, de The Weeknd.</li>
+      <li> Blinding Lights, de The Weeknd.</li> 
       <li>Dance Monkey, de Tones and I.</li>
       <li>The Box, de Roddy Ricch.</li>
       <li>Roses - Imanbek Remix, de SAINt JHN e Imanbek.</li>
@@ -161,17 +161,84 @@
     </div>
 </div>
 </div>
+    <div class="slideshow-container">
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="imagenes\Julio\casita_del_bosque.jpg" class="img-adaptables" style="width:100%">
+    <div class="text">Casita del Bosque</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="imagenes\Julio\hablame_de_paz.jpg" class="img-adaptables" style="width:100%">
+    <div class="text">Hablame de Paz</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="imagenes\Julio\guerra_y_amor.jpg" class="img-adaptables" style="width:100%">
+    <div class="text">Guerra y Amor</div>
+  </div>
+
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+  <h2>ARTISTA DESTACADO</h2>
+  <p>EmCa Producciones quiere destacar a nuevos artistas, tanto del país como del mundo. Esta semana queremos destacar a un cordobes muy particular, a Julio César Alem Daher</p>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
  	<footer>
   		<div class="fila">
   			<div class="columna text-aling:center">
   				 <h3>¿Quienes Somos?</h3>
   				<p>EmCa Producciones es una empresa jóven con ambición de llevar información y música a todos los rincones que forman parte de nuestro país. EmCa es un sueño por parte de nuestros integrantes que se fue construyendo con el tiempo. Esperamos seguir creciendo tanto como individios en la búsqueda de conocimientos para poder crecer asi como empresa.</p>
-  				<div class="contacto text-aling:center"> 
+  				<span class="contacto text-aling:center"> 
   					<a href="#" class="contacto"><i class="fab fa-whatsapp"></i></a>
-  				</div>
-  				<div class="redes text-aling:center">
+  				</span>
+  				<span class="redes text-aling:center">
   					<a href="#" class="redes"><i class="fab fa-facebook"></i></a>
-  				</div>
+  				</span>
   			</div>
 				<div class="columna">
   					<img src="imagenes/logoEmCa_2020_fondoblanco.png" class=img-adaptables alt="EmCa Producciones">
