@@ -3,7 +3,7 @@
   <head>
       <meta charset="UTF-8">
       <title> EmCa Producciones </title>
-      <link rel="stylesheet" href="CSS/estilo2.css">
+      <link rel="stylesheet" href="CSS/estilo.css">
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Sansita:wght@700&family=Tajawal:wght@400;500&display=swap" rel="stylesheet">
@@ -14,96 +14,278 @@
       <br>
       <br>
       
-      <audio id="audio" preload="auto" tabindex="0" controls="" >
-        <source src="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3">
-      </audio>
+      <body
+id     = "bTag"
+onload = "init_system()"
+>
 
-<ul id="playlist">
-        <li class="active">
-           <a href="audios/Besos_en_guerra.mp3">
-             Saxon - Crusader Prelude
-           </a>
-        </li>
-        <li>
-            <a href="audios/Consejo_de_amor.mp3">
-                Saxon - Little Bit Of What You Fancy
-            </a>
-        </li>
-        <li>
-            <a href="<Somos_Anormales.mp3">
-                Saxon - Sailing To America
-            </a>
-        </li>
-        <li>
-            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/05%20-%20Set%20Me%20Free.mp3">
-                Saxon - Set Me Free
-            </a>
-        </li>
-        <li>
-            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/06%20-%20Just%20Let%20Me%20Rock.mp3">
-                Saxon - Just Let Me Rock
-            </a>
-        </li>
-    </ul>
+    <audio  
+    controls
+    id = "mp3Tag" src="blah" type="audio/mpeg">
+    Your browser does not support the audio element.
+
+    </audio>
+
+    <br/>
 
 
-     <script type="text/javascript"> init();
-
-function init(){
-    var audio = document.getElementById('audio');
-    var playlist = document.getElementById('playlist');
-    var tracks = playlist.getElementsByTagName('a');
-    audio.volume = 0.10;
-    audio.play();
+    <button id = "minusOne" onclick = "dec()"> Back     
+    </button>
     
-    for(var track in tracks) {
-      var link = tracks[track];
-      if(typeof link === "function" || typeof link === "number") continue;
-      
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var song = this.getAttribute('href');
-        run(song, audio, this);
-      });
-    }
-    
-    audio.addEventListener('ended',function(e) {
-        for(var track in tracks) {
-          var link = tracks[track];
-          var nextTrack = parseInt(track) + 1;
-          if(typeof link === "function" || typeof link === "number") continue;
-          if(!this.src) this.src = tracks[0];
-          if(track == (tracks.length - 1)) nextTrack = 0;
-                                  console.log(nextTrack);
-          if(link.getAttribute('href') === this.src) {
-            var nextLink = tracks[nextTrack];
-            run(nextLink.getAttribute('href'), audio, nextLink);
-            break;
-          }
-        }
-    });
-}
+    <button id = "plusOne" onclick = "incr()"> Next
+    </button>
 
-function run(song, audio, link){
-        var parent = link.parentElement;
 
-        //quitar el active de todos los elementos de la lista
-        var items = parent.parentElement.getElementsByTagName('li');
-        for(var item in items) {
-          if(items[item].classList)
-            items[item].classList.remove("active");
-        }
+
+      <script>
+            var playlist = [];
+            var trackNum = 0;
+            var baseDom  = "#songInfo table tr#songRow_";
+            var pUpObj   = "";
+            var pUpDOM   = "songRow_";
+
+            var extraInfoDom = document.getElementById( "extraInfo" );
+            
+            class SongProfile
+            {
+                constructor( bName, sTitle, sCaption, sGenre, sFN )
+                {
+                    this.objId     = 0;
+
+                    this.bandName  = bName;
+                    this.bandId    = "bandName";
+                    
+                    this.title     = sTitle;
+                    this.titleId   = "songTitle";
+                    
+                    this.caption   = sCaption;
+                    this.captionId = "caption";
+                    
+                    
+                    this.genre     = sGenre;
+                    this.genreId   = "genre";
+                    
+                    
+                    this.fileName  = sFN;
+                    this.mp3Id     = "mp3Tag";
+
+                    // -- pop up
+                    this.extraInfo = "blah";
+                    
+                }
+                
+                update_setting()
+                {
+                    alert( "inside update_setting() ");
+                    var mp3Obj = document.getElementById( this.mp3Id );
+                    
+                    //alert( mp3Obj.getAttribute( "src" ) );
+                    
+                    mp3Obj.setAttribute( "src", "music/audio/123.mp3" );
+                    
+                    //alert( mp3Obj.getAttribute( "src" ) );
+                    
+                }
+                
+                show_profile()
+                {
+                    document.getElementById( this.titleId ).innerHTML = this.title;
+                    
+                    document.getElementById( this.captionId ).innerHTML = this.caption;
+                    
+                    document.getElementById( this.genreId ).innerHTML = this.genre;
+                    
+                    
+                }
+
+            
+            }   
+            
         
-        //agregar active a este elemento
-        parent.classList.add("active");
+            
+            function init_system()
+            {
+                alert( "inside init_system()" );
+                
+                /* ===================
+                bName, sTitle, sCaption, sGenre, sFN               
+                
+
+                
+                */
+                var song_0 = new SongProfile
+                ( 
+                "Magic!", 
+                "Rude", 
+                "#1", 
+                "Pop", "music/audio/Besos_en_guerra.mp3"
+                );
+                
+                playlist.push( song_0 );
+                
+                var song_1 = new SongProfile
+                ( 
+                "BSB", 
+                "As Long As You Love Me", 
+                "#1", 
+                "Pop", "https://vuongducnguyen.com/audio/Magic!_Rude_(Violin_Cover_by_Robert_Mendoza).mp3");
+                
+                playlist.push( song_1 );
+                
+                var song_2 = new SongProfile
+                ( 
+                "Jackson 5", 
+                "I Want You Back", 
+                "#1", 
+                "Pop", "https://vuongducnguyen.com/audio/Magic!_Rude_(Violin_Cover_by_Robert_Mendoza).mp3");
+                
+                playlist.push( song_2 );
+                
+                var song_3 = new SongProfile
+                ( 
+                "1D", 
+                "What's Makes You Beautfiul", 
+                "#1", 
+                "Pop", "https://vuongducnguyen.com/audio/Magic!_Rude_(Violin_Cover_by_Robert_Mendoza).mp3");
+                
+                playlist.push( song_3 );
+                
+                //song_1.update_setting(   );
+                
+                // -- make clone of table rows
+                
+                var i = 0;
+                for( ; i < playlist.length; i++ )
+                {
+                    make_a_clone( i, playlist[i] );
+                    
+                }    
+                alert( "done making clone" );
+                trackNum = 0;
+                
+                change_songs( 0, playlist );
+
+                // -- extra info pop up
+                song_0.set_listener( 0, "Good Song" );
+                song_1.set_listener( 1, "Best BB of all time!!!" );
+                song_2.set_listener( 2, "Good beat" );
+                song_3.set_listener( 3, "2 Directions");
+                extraInfoDom = document.getElementById( "extraInfo" );
+
+                // -- hide the base part
+                document.getElementById( pUpDOM ).style.display = "none";
+                
+                
+            }
+            
+            function change_songs( currIndex, songList )
+            {
+                // -- for loop reset all highlights to white
+                for( var a = 0; a < songList.length; a++ )
+                {
+                
+                    document.getElementById( "songRow_" + a ).style.color = "#d0d0d0";
+                
+                }
+                
+                // -- highlight the current song being played
+                /*document.getElementById( "songRow_" + currIndex ).style.backgroundColor = "#00ffbb";*/
+
+                document.getElementById( "songRow_" + currIndex ).style.color = "#00ffbb";
+                
+                playlist[currIndex].update_setting();
+                
+            }
+            
+            function make_a_clone( id, songObj )
+            {
+                //alert( "inside make a clone()" );
+                
+                var baseObj = document.getElementById( "songRow_" );
+                // -- clone and set attribute
+                var clObj = baseObj.cloneNode( true );
+                clObj.setAttribute( "id", "songRow_" + id );
+                
+                // -- set attributes of children
+                var cNodes = clObj.children;
+                
+                //alert( "cNodes[0]: " + cNodes[0].getAttribute( "id") );
+                //alert( "cNodes: " + cNodes );
+
+                cNodes[0].setAttribute( "id", songObj.bandId);   
+                //alert( cNodes[0].innerHTML );                 
+                cNodes[0].innerHTML = songObj.bandName;
+                
+                
+                cNodes[1].setAttribute( "id", songObj.titleId );
+                cNodes[1].innerHTML = songObj.title;                
+
+                cNodes[2].setAttribute( "id", songObj.captionId );
+                cNodes[2].innerHTML = songObj.caption;
+                        
+                        
+                cNodes[3].setAttribute( "id", songObj.genreId );
+                cNodes[3].innerHTML = songObj.genre;      
+                         
+                /* -- there is no HTML tag for file name
+                
+                */
+                /*cNodes[4].setAttribute( "id", songObj.mp3Id );
+                cNodes[4].innerHTML = songObj.fileName;                           */
+           
+              
+                /* --
+                a. append to TR puts it INSIDE the TR ==> Tr within a TR
+                
+                b. instead, we append to the table to make another TR
+                */
+              document.getElementById("playlistTb").appendChild( clObj );
+                
+            }
+            
+            function incr()
+            {
+                alert( "next song" );
+                trackNum++;
+                
+                //make_a_clone( trackNum, playlist[trackNum] );
+                
+                /*var currSong = document.getElementById( "songRow_" + trackNum );
+                
+                currSong.style.backgroundColor = "#00ffbb";
+                */
+                
+                // -- boundary check forward
+                if( trackNum > playlist.length-1 )
+                {
+                    trackNum = 0;
+                }
+                
+ 
+                
+                // -- update highlight
+                change_songs( trackNum, playlist );
+                
+                
+            }
+            
+            function dec()
+            {
+                alert( "previous song" );
+                trackNum--;
+
+                // -- boundary check backwards
+                if( trackNum < 0 )
+                {
+                    trackNum = playlist.length-1;
+                }
+                
+                // -- update highlight
+                change_songs( trackNum, playlist );
+                
+                
+            }
+        </script>
         
-        //tocar la cancion
-        audio.src = song;
-        audio.load();
-        audio.play();
-}
-
-</script>
-
   </body>
 </html>
