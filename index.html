@@ -39,24 +39,24 @@
       <div class="mask">
       <ul>
         <li class="anim1">
-          <div class="quote">Córdoba- 39°C, tiempo soleado, probabilidad de 10% de chaparrones aislados, viento del norte.</div>
-          <div class="source"> UV: alto-</div>
+          <div class="quote">Capital Federal - 18°C- Despejado - 51% de Humedad - Viento del Norte a 9 km/h.</div>
+          <div class="source"> Mín 17°C - Máx 28°C</div>
         </li>
         <li class="anim2">
-          <div class="quote">Tucumán- 45°C a la sombra, tiempo soleado, viento del noreste.</div>
-          <div class="source"> Use protector y gorro</div>
+          <div class="quote">Córdoba Capital - 17.2°C - Despejado - 55% de Humedad - Viento del Oeste a 3 km/h.</div>
+          <div class="source"> Mín 16°C - Máx 32°C</div>
         </li>
         <li class="anim3">
-          <div class="quote">San Fernando del Valle de Catamarca- 35°C, tiempo soleado.</div>
-          <div class="source">- Probabilidad de lluvias aisladas con fuerte actividad eléctrica</div>
+          <div class="quote">Rosario Sta Fe- 15.5°C - Despejado- 68% de Humedad- Viento del Este a 15 km/h.</div>
+          <div class="source"> Mín 13°C - Máx 31°C</div>
         </li>
         <li class="anim4">
-          <div class="quote">Hello, this is a quote from a plant.</div>
-          <div class="source">- Plant</div>
+          <div class="quote">Las Grutas Río Negro- 23.4°C - Parcialmente Nublado- 11% de Humedad- Viento del Norte a 24 km/h.</div>
+          <div class="source">Mín 15°C - Máx 24°C</div>
         </li>
         <li class="anim5">
-          <div class="quote">How do ya like that.</div>
-          <div class="source">- Cassidy</div>
+          <div class="quote">¡ÁNIMO! Es mitad de semana y el cuerpo lo sabe</div>
+          <div class="source">¡Que tengas un bonito día!</div>
         </li>
       </ul>
     </div>
@@ -66,7 +66,6 @@
   	<div class="contenedor-barra-navegacion">
   		<div class="navbar">
   			<a href="#home">Home</a>
-  			<a href="#news">Últimas Noticias</a>
   			<a href="#contact">Economía</a>
   			<a href="#contact">Política</a>
   			<a href="#contact">Espectáculos</a>
@@ -95,13 +94,42 @@
             <h1>EmCa Radio Estudio Online</h1>
             <p>EmCa Producciones espera que tu día a día sea mejor con música, por eso también te brindamos es posibilidad con EmCa Radio Estudio online. Las 24hs de música para vos. ¡Escuchanos!</p>
             <br>
+          <head>
+            <script>
+            var playlist = [];
+            var trackNum = 0;
+            
+            function init(i)
+            {
+                playlist = [
+                "https://ia601402.us.archive.org/1/items/tu-falta-de-querer/123.mp3",
+                "https://ia801402.us.archive.org/1/items/tu-falta-de-querer/Besos_en_guerra.mp3",
+                "https://ia601509.us.archive.org/6/items/somos-anormales/Somos_Anormales.mp3",
+                "https://ia601509.us.archive.org/6/items/somos-anormales/Vacaciones.mp3",
+                "https://ia801402.us.archive.org/1/items/tu-falta-de-querer/Consejo_de_amor.mp3",
+                "https://ia801402.us.archive.org/1/items/tu-falta-de-querer/Tu_falta_de_querer.mp3",
+                ];
+                aud = document.getElementById("audio");
+                trackNum = i;
+                aud.onended = function() {
+                trackNum = (trackNum + 1) % playlist.length;
+                  aud.setAttribute('src', playlist[trackNum]);
+                  aud.play();   
+                };
+                aud.setAttribute('src', playlist[trackNum]);
+                aud.play();
+            }
+            </script>
+          </head>
+    <body
+id     = "bTag"
+>
 
-            <audio controls="controls">
-            <source src="audios/123.mp3" type="audio/mp3">
-            <source src="audios/123.ogg" type="audio/ogg">
-            <source src="audios/Vacaciones.mp3" type="audio/mp3">
-            <source src="audios/Vacaciones.ogg" type="audio/ogg">
-            </audio>
+  <audio id="audio" preload="none" tabindex="0" controls>
+          <source id="audio_src" src="" />
+        </audio>
+            
+            <button onclick="init(0)">Play</button>
           </div>
       </div>
 
@@ -110,7 +138,7 @@
           <div class="columna-12 text-aling:center">
             <h1>Eclipse Solar 2020</h1>
             <h5>El fenómeno astronómico se pudo observar por segunda vez consecutiva</h5>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><a href="#" class="btn btn-primario">Leer más</a>
+            <p> Por segundo año consecutivo, Sudamérica tuvo el privilegio de poder observar en forma total este fenómeno astronómico que no volverá a ocurrir en la región hasta 2048. Quienes estuvieron en gran parte de la Patagonia de Argentina y Chile tuvieron una platea preferencial para observarlo. En la franja donde se produjo la totalidad del eclipse, que tuvo un ancho de aproximadamente 90 kilómetros, el día se volvió noche. Así, durante unos pocos minutos, la Luna cubrió por completo al Sol. La duración máxima de la totalidad fue de 2 minutos y 10 segundos, pero el tiempo total de las fases del espectáculo espacial es de unas tres horas.</p><a href="#" class="btn btn-primario">Leer más</a>
           </div>
         </div>
 </div>
@@ -119,12 +147,12 @@
         <div class="columna-6 text-aling:center">
             <h3>La vacuna Pfizer ya se implemente</h3>
             <h6>EE.UU ya comenzó el operativo organizado por el Pentágono</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><a href="#" class="btn btn-primario">Leer más</a>
+            <p>El operativo de aplicación de la vacuna de los laboratorios Pfizer y BioNTech comenzó este lunes en Estados Unidos, con tres millones de dosis distribuidas en 50 estados. La enfermera Sandra Lindsay, fue la primera persona en recibir la vacuna, que recibió una autorización de emergencia de la FDA, el organismo que regula los alimentos y medicamentos en los Estados Unidos.</p><a href="#" class="btn btn-primario">Leer más</a>
         </div>
         <div class="columna-6 text-aling:center">
-            <h3>Cuenta Regresiva para la Ley de Legalización del Aborto </h3>
-            <h6>El Senado sesionara hoy el proyecto después de la media sanción de la Cámara de Diputados del viernes</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><a href="#" class="btn btn-primario">Leer más</a>
+            <h3>Cuenta Regresiva para la Legalización del Aborto </h3>
+            <h6>El Senado sesionara hoy el proyecto</h6>
+            <p>Hoy se presentarán en tres comisiones los ministros Ginés González García y Elizabeth Gómez Alcorta. La cuenta regresiva para la suerte de la ley para la Interrupción Voluntaria del Embarazo comenzará este lunes en el Senado de la Nación, cuando desde las 14:00 comience a sesionar en forma virtual el plenario de tres comisiones que emitiría un dictamen para que la cuestión del aborto se pueda debatir el próximo 29 de diciembre.</p><a href="#" class="btn btn-primario">Leer más</a>
         </div>
     </div>
 </div>
@@ -156,25 +184,21 @@
 <div class="contenedor">
     <div class="fila">
         <div class="columna-3 text-aling:center">
-           <h3>Fallo global de Google</h3>
-           <h6>Todos los servicios de la empresa se vieron afectados a nivel mundial</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> <a href="#" class="btn btn-primario">Leer más</a>
+           <h3>Fallo global de la empresa Google</h3>
+            <p>Servicios de Alphabet Inc, como YouTube, Gmail y Google Drive y Classroom emtre otros, fueron restaurados el lunes para la mayoría de los USuarios, tras una caída global de los servicios que afectó a miles de usuarios.“¡Estamos de vuelta y funcionando!”, dijo la plataforma de video en un tuit, después que los servicios se vieron afectados por casi una hora.</p> <a href="#" class="btn btn-primario">Leer más</a>
         </div>          
         <div class="columna-3 text-aling:center">
             <h3>Se agrava la causa de los rugbiers</h3>
-            <h6>Las perícias médicas a la víctima agrava la acusación de los dos rugbiers</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> 
+            <p>Apartir de la confirmación del informe de las pericias médicas a la víctima Lautaro Insúa, el fiscal Horacio Vázquez profundizó la acusación en contra de los dos jóvenes acusados de golpearlo: ahora no responden por lesiones leves sino por lesiones graves, lo que supone pena de prisión de hasta seis años. A raíz de esto, el abogado querellante volvió a exigir la detención de ambos.</p> 
             <a href="#" class="btn btn-primario">Leer más</a>
         </div>          
         <div class="columna-3 text-aling:center">
             <h3>Se encontró el cuerpo del deportista desaparecido</h3>
-            <h6>Esperan los resultados de la autopsia para determinar que sucedio</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> <a href="#" class="btn btn-primario">Leer más</a>
+            <p>El cuerpo del joven de 23 años que desapareció el sábado fue encontrado este lunes en el lago artificial que desaparecio, dentro de un country de Escobar, confirmaron fuentes judiciales. Según fuentes policiales, se logró dar con el cuerpo sin vida del joven en el interior del lago artificial del Barrio Vistas, a 20 metros de la costa y 8 metros de profundidad.</p> <a href="#" class="btn btn-primario">Leer más</a>
         </div>          
         <div class="columna-3 text-aling:center">
             <h3>Vuelven los shows presenciales a Córdoba</h3>
-            <h6>A partir de este viernes los cordobeses podran volver a los espectáculos</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> <a href="#" class="btn btn-primario">Leer más</a>
+            <p>Los espectáculos en formato teatro comenzarían a partir de este viernes, mientras que evaluarán la instrumentación de una burbuja social de hasta 1500 personas. Tras las idas y vueltas, finalmente se habilitarán los recitales presenciales en Córdoba, que se acogerá al protocolo nacional dispuesto para el sector mediante un DNU presidencial.</p> <a href="#" class="btn btn-primario">Leer más</a>
         </div>          
     </div>
 </div>
@@ -183,23 +207,21 @@
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="imagenes/Julio/casita_del_bosque.jpg" class="img-adaptables" style="width:100%">
+    <img src="imagenes/Julio/redimencionadas/casita_del_bosque.jpg" class="img-adaptables" style="width:100%" "height: 300px">
     <div class="text">Casita del Bosque</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="imagenes/Julio/hablame_de_paz.jpg" class="img-adaptables" style="width:100%">
+    <img src="imagenes/Julio/redimencionadas/hablame_de_paz.jpg" class="img-adaptables" style="width:100%" "height: 300px">
     <div class="text">Hablame de Paz</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="imagenes/Julio/guerra_y_amor.jpg" class="img-adaptables" style="width:100%">
+    <img src="imagenes/Julio/redimencionadas/guerra_y_amor.jpg" class="img-adaptables" style="width:100%" "height: 300px">
     <div class="text">Guerra y Amor</div>
   </div>
-
-
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
