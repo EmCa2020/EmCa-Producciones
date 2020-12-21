@@ -16,6 +16,9 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+p {
+  text-indent: 50px;
+}
 
 header{
 	width: 100%;
@@ -90,6 +93,8 @@ header .info .iconos{
 	background-color: #777777;
 	color: orange;
 }
+
+/*Barra giratoria- Carrusel*/
 .content-slider {
   width: 100%;
   height: 50px;
@@ -136,23 +141,23 @@ header .info .iconos{
   }
 
   .slider li.anim1 {
-  animation: cycle 13s linear infinite;
+  animation: cycle 17s linear infinite;
   }
 
   .slider li.anim2 {
-  animation: cycle2 13s linear infinite;
+  animation: cycle2 17s linear infinite;
   }
 
   .slider li.anim3 {
-  animation: cycle3 13s linear infinite;
+  animation: cycle3 17s linear infinite;
   }
 
   .slider li.anim4 {
-  animation: cycle4 13s linear infinite;
+  animation: cycle4 17s linear infinite;
   }
 
   .slider li.anim5 {
-  animation: cycle5 20s linear infinite;
+  animation: cycle5 17s linear infinite;
   }
 
   .slider:hover li {
@@ -352,6 +357,7 @@ header .info .iconos{
 	height: 50px;
 }
 
+/*Menú*/
 .navbar {
   overflow: hidden;
   background-color: orange;
@@ -384,108 +390,66 @@ header .info .iconos{
   color: #777777;
 }
 
+
+/*Buscador-Menú*/
 * {
   box-sizing: border-box;
 }
 
-form.example input[type=text] {
-  padding: 5px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: grey;
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: orange;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top: 2px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  float: right;
 }
 
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: grey;
-  color: orange;
-  font-size: 17px;
-  border: 1px solid orange;
-  border-left: none;
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #666666;
-}
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+input[type=text]:focus {
+  width: 30%;
 }
 
 
 .cuerpo .contenedor-reproductor{
 	width: 24%;
-	height: 280px;
+	height: 300px;
 	background-color: orange;
 	padding: 10px;
-	margin: 5px 10px;
+	margin: 50px 10px;
+	margin-bottom: 10px;
 	float: right;
 	box-sizing: border-box;
 	font-size: 14px;
 	text-align: center;
+	clear: both;
 }
 
-.cuerpo .contenedor-menu-deslizante{
 
-}
-#mySidenav a {
-  position: absolute;
-  right: 0px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 100px;
-  text-decoration: none;
-  font-size: 15px;
-  color: white;
-  border-radius: 10px 0px 0px 10px;
-}
-
-#mySidenav a:hover {
-  left: 0;
-}
-
-#about {
-  top: 350px;
-  background-color: #4CAF50;
-}
-
-#blog {
-  top: 390px;
-  background-color: #2196F3;
-}
-
-#projects {
-  top: 420px;
-  background-color: #f44336;
-}
-
-#contact {
-  top: 450px;
-  background-color: #555
-}
 .cuerpo .contenedor-mas-leido{
 	width: 24%;
-	height: 220px;
+	height: 230px;
 	background-color: orange;
 	padding: 15px;
-	margin: 10px 10px;
+	margin: 10px;
 	float: right;
 	box-sizing: border-box;
 	text-align: auto;
 }
+
 .cuerpo .contenedor-mas-escuchado{
 	width: 24%;
-	height: 250px;
+	height: 230px;
 	background-color: orange;
 	padding: 15px;
-	margin: 10px 10px;
+	margin: 10px;
 	float: right;
 	box-sizing: border-box;
 	text-align: auto;
@@ -505,6 +469,7 @@ form.example::after {
  	cursor: pointer;
 }
 
+/*Diapositivas Destacado*/
 /* Darker background on mouse-over */
 .button:hover {
   background-color: grey;
@@ -517,7 +482,6 @@ form.example::after {
   position: relative;
   margin: auto;
   clear: both;
-  padding-bottom: 40px;
 }
 
 /* Hide the images by default */
@@ -607,6 +571,109 @@ form.example::after {
   to {opacity: 1}
 }
 
+
+/*Diapositivas Eclipse*/
+/* Darker background on mouse-over */
+.button:hover {
+  background-color: grey;
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 10px 20px;
+  clear: both;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #777777;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: orange;
+}
+
+/* Caption text */
+.text {
+  color:#777777;
+  font-size: 20px;
+  margin: 15px 20;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/5 etc) */
+.numbertext {
+  color: #777777;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
 footer{
 	width: 100%;
 	background-color: orange;
@@ -614,7 +681,7 @@ footer{
 footer .fila{
 	width: 100%;
 }
-footer .fila .columna{
+footer .fila .columna-6{
 	width: calc(50% - 40px);
 	float: left;
 	padding: 20px;
@@ -628,20 +695,29 @@ footer .copyright{
 	background-color: black;
 	clear: both;
 }
-
-a:.link, a:.visited {
-  background-color: orange;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  float: right;
+.cuerpo .contenedor-mas-leido{
+	width: 24%;
+	height: 230px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
 }
 
-a:.hover, a:.active {
-  background-color: grey;
+.cuerpo .contenedor-mas-escuchado{
+	width: 24%;
+	height: 230px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
 }
+
+
 
 /* Base del boton*/
 .btn{
@@ -681,9 +757,10 @@ a:.hover, a:.active {
 .btn-primario-inverso{
 	background-color: #808080;
 	color: orange;
-	margin-top: 10px;
-	margin-bottom: : 15px;
+	margin: 20px;
+	margin-bottom: 15px;
 	text-align: center;
+	clear: both;
 }
 .btn-primario-inverso:hover{
 	background-color: #666666;
@@ -716,7 +793,6 @@ a:.hover, a:.active {
 
 
 /*Grilla*/
-
 .contenedor{
 	width: 1000px;
 	margin-left: 10px;
@@ -724,10 +800,12 @@ a:.hover, a:.active {
 }
 .fila{
 	padding-bottom: 20px;
+	margin-top: 40px;
 }
 .columna-1{
 	width: 8.333333333333333%;
 	color: black;
+	margin-top: 30px;
 	margin-bottom: 5px;
 	float: left;
 	padding: 5px 15px;
@@ -748,7 +826,7 @@ a:.hover, a:.active {
 	color: black;
 	margin-bottom: 15px;
 	float: left;
-	margin-bottom: 25px;
+	margin-bottom: 80px;
 	padding: 10px 15px;
 	text-align: center;
 	box-sizing: border-box;
@@ -777,7 +855,7 @@ a:.hover, a:.active {
 	width: 47%;
 	color: black;
 	margin-top: 20px;
-	margin-bottom: 15px;
+	margin-bottom: 45px;
 	float: left;
 	padding: 10px 20px;
 	box-sizing: border-box;
@@ -845,42 +923,63 @@ a:.hover, a:.active {
 	width: 100% !important;
 }
 
-/*Medidas de referencia para dispositivos moviles de Bootstrap*/
+	/*Medidas de referencia para dispositivos moviles de Bootstrap*/
+ 	
 @media (max-width: 767px) {
-  /* Celular */
-  
+  /*Celular*/
+
+
+	p {
+  	text-indent: 25px;
+	}
+
   header{
-  	height: 150px;
+  	height: 100px;
   	transition: 2s;
   }
   header .logo{
   	width: 100px;
-  	height: 120px;
+  	height: 80px;
   	float: left;
   	transition: 2s;
   }
+  header .info{
+	width: calc(75% - 100px);
+	float: right;
+	margin: 20px 15px;
+	color: #ff8d00;
+	font-family: 'Niconne', cursive;
+  }
+
   header .info .titulo{
-  	width: calc(100% - 100px);
-  	font-size: 40px;
+  	width: calc(100% - 30px);
+  	font-size: 30px;
   	float: right;
   	transition: 2s;
+  	text-align: right;
+  	clear: both;
   }
   header .info .titulo .titulo2{
   	display: none;
   	transition: 2s;
   }
+
   header .info .iconos{
+  	width: 70px;
 	height: 20px;
 	float: right;
 	margin: 5px;
-	margin-top: 15px;
+	margin-top: 5px;
 	text-align: left;
 	font-size: 10px;
 	transition: 2s;
-}
-  .cuerpo .contenedor-barra-giratoria{
-  	display: none;
-  	transition: 2s;
+	clear: both;
+  }
+
+  .cuerpo{
+	width: 100%;
+	clear: both;
+	transition: 2s;
   }
   .cuerpo .contenedor-barra-giratoria{
   	display: none;
@@ -970,76 +1069,1225 @@ a:.hover, a:.active {
   transition: 2s;
   }
 
- .cuerpo .contenedor-barra-navegacion{
-	height: 40px;
+	/*Menú*/
+
+  .cuerpo .contenedor-barra-navegacion{
+	height: 30px;
 	transition: 2s;
-  }
+	clear: both;
+   }
 
- .navbar {
-  overflow: hidden;
-  background-color: orange;
-  position: relative;
-  top: 0px;
-  width: 100%;
-  transition: 2s;
-  }
+  .navbar {
+   overflow: hidden;
+   background-color: orange;
+   position: relative;
+   top: 0px;
+   width: 100%;
+   transition: 2s;
+   }
 
- .navbar a {
-  float: left;
-  display: block;
-  color: #777777;
-  text-align: center;
-  padding: 7px 8px;
-  text-decoration: none;
-  font-size: 15px;
-  transition: 2s;
-  }
+   .navbar a {
+   float: left;
+   display: block;
+   color: #777777;
+   text-align: center;
+   padding: 4px 5px;
+   text-decoration: none;
+   font-size: 17px;
+   transition: 2s;
+   }
 
-.navbar a:hover {
-  background-color: #535353;
-  color: white;
-  transition: 2s;
-}
+   .navbar a:hover {
+   background-color: #535353;
+   color: white;
+   transition: 2s;
+   }
 
-.cuerpo .contenedor-reproductor{
-	width: 24%;
-	height: 280px;
+
+	/*Buscador-Menú*/
+   * {
+   box-sizing: border-box;
+   }
+
+   input[type=text] {
+   width: 170px;
+   height: 30px;
+   box-sizing: border-box;
+   border: 2px solid grey;
+   border-radius: 4px;
+   font-size: 12px;
+   background-color: orange;
+   background-image: url('searchicon.png');
+   background-position: 10px 10px; 
+   background-repeat: no-repeat;
+   padding: 12px 20px 12px 40px;
+   margin-top: 2px;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+   transition: 2s;
+   }
+
+   input[type=text]:focus {
+   width: 30%;
+   }
+
+   .cuerpo .barra-de-navegacion .contenedor-iconos{
+	height: 30px;
+	background-color: orange;
+	color: #777777;
+	padding: 3px;
+	margin: 5px 10px;
+	box-sizing: border-box;
+	border: none;
+ 	color: white;
+ 	cursor: pointer;
+ 	clear: both;
+	}
+
+	/*Reproductor*/
+
+   .cuerpo .contenedor-reproductor{
+	width: 100%;
+	height: 160px;
 	background-color: orange;
 	padding: 5px;
-	margin: 5px 10px;
+	margin: 85px 0px;
+	margin-bottom: 15px;
 	float: right;
-	box-sizing: border-box;
-	font-size: 14px;
 	text-align: center;
 	transition: 2s;
+	clear: both;
+	}
+	.cuerpo .contenedor-reproductor p{
+	display: none;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.contenedor{
+	width: 700px;
+	margin-left: 10px;
+	margin-right: 10px;
+	transition: 2s;
+	}
+	.fila{
+	padding-bottom: 20px;
+	margin-top: 40px;
+	}
+
+	.columna-12{
+	width: 67%;
+	margin-bottom: 15px;
+	float: left;
+	padding: 10px 5px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #333333;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-12 h5{
+	display: none;
+	transition: 2s;
+	}
+
+	.columna-6{
+	width: 34%;
+	margin-top: 20px;
+	margin-bottom: 45px;
+	float: left;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #777777;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-6 h6{
+	display: none;
+	transition: 2s;
+	}
+
+	.cuerpo .contenedor-mas-leido{
+	width: 100%;
+	height: 200px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+	
+	.cuerpo .contenedor-mas-escuchado{
+	width: 100%;
+	height: 230px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.columna-3{
+	width: 35%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	float: left;
+	padding: 5px 15px;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #777777;
+	transition: 2s;
+	}
+
+	/*Diapositivas Destacado*/
+	/* Darker background on mouse-over */
+	.button:hover {
+  	background-color: grey;
+	}
+	* {box-sizing:border-box}
+
+	/* Slideshow container */
+	.slideshow-container {
+  	max-width: 500px;
+  	position: relative;
+ 	margin: auto;
+ 	clear: both;
+ 	transition: 2s;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+  	display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+  	cursor: pointer;
+  	position: absolute;
+  	top: 50%;
+ 	width: auto;
+ 	margin-top: -22px;
+  	padding: 16px;
+  	color: #777777;
+  	font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+  	border-radius: 0 3px 3px 0;
+  	user-select: none;
+  	transition: 2s;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+  	right: 0;
+  	border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+ 	background-color: orange;
+	}
+
+	/* Caption text */
+	.text {
+  	color:#777777;
+  	font-size: 20px;
+  	margin: 15px 20;
+  	padding: 8px 12px;
+  	position: absolute;
+  	bottom: 8px;
+  	width: 100%;
+  	text-align: center;
+  	transition: 2s;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+  	color: #777777;
+  	font-size: 12px;
+  	padding: 8px 12px;
+  	position: absolute;
+  	top: 0;
+  	transition: 2s;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	cursor: pointer;
+  	height: 15px;
+ 	width: 15px;
+  	margin: 0 2px;
+  	background-color: #bbb;
+  	border-radius: 50%;
+  	display: inline-block;
+  	transition: background-color 0.6s ease;
+  	transition: 2s;
+	}
+	
+	.active, .dot:hover {
+  	background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+  	-webkit-animation-name: fade;
+  	-webkit-animation-duration: 1.5s;
+  	animation-name: fade;
+  	animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+ 	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	@keyframes fade {
+  	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	footer{
+	width: 100%;
+	background-color: orange;
+	transition: 2s;
+	}
+	footer .fila{
+	width: 100%;
+	transition: 2s;
+	}
+	footer .fila .columna-6{
+	width: calc(100% - 20px);
+	float: left;
+	margin-bottom: 5px;
+	padding: 5;
+	text-align: center;
+	transition: 2s;
+	}
+	footer .copyright{
+	width: 100%;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	background-color: black;
+	clear: both;
+	transition: 2s;
+	}
 }
-}
+
 @media (min-width: 768px) and (max-width: 991px) {
   /* Tablet */
- header{
-  	height: 150px;
+
+  p {
+  	text-indent: 25px;
+	}
+
+  header{
+  	height: 100px;
   	transition: 2s;
   }
   header .logo{
   	width: 100px;
-  	height: 120px;
+  	height: 80px;
   	float: left;
   	transition: 2s;
   }
+  header .info{
+	width: calc(75% - 100px);
+	float: right;
+	margin: 20px 15px;
+	color: #ff8d00;
+	font-family: 'Niconne', cursive;
+  }
+
   header .info .titulo{
-  	width: calc(100% - 100px);
-  	font-size: 60px;
+  	width: calc(100% - 30px);
+  	font-size: 30px;
   	float: right;
   	transition: 2s;
+  	text-align: right;
+  	clear: both;
   }
   header .info .titulo .titulo2{
   	display: none;
   	transition: 2s;
   }
-  
+
+  header .info .iconos{
+  	width: 70px;
+	height: 20px;
+	float: right;
+	margin: 5px;
+	margin-top: 5px;
+	text-align: left;
+	font-size: 10px;
+	transition: 2s;
+	clear: both;
+  }
+
+  .cuerpo{
+	width: 100%;
+	clear: both;
+	transition: 2s;
+  }
+  .cuerpo .contenedor-barra-giratoria{
+  	display: none;
+  	transition: 2s;
+  }
+  .content-slider {
+  display: none;
+  transition: 2s;
+  }
+  .slider {
+  display: none;
+  transition: 2s;
+  }
+
+  .mask {
+  display: none;
+  overflow: hidden;
+  height: 50px;
+  transition: 2s;
+  }
+
+  .slider ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transition: 2s;
+  }
+
+  .slider li {
+  display: none;
+  width: 680px;
+  height: 50px;
+  position: absolute;
+  top: -325px;
+  list-style: none;
+  transition: 2s;
+  }
+
+  .slider .quote {
+  display: none;
+  font-size: 16px;
+  font-style: italic;
+  transition: 2s;
+  }
+
+  .slider .source {
+  display: none;
+  font-size: 12px;
+  text-align: left;
+  transition: 2s;
+  }
+
+  .slider li.anim1 {
+  display: none;
+  animation: cycle 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim2 {
+  display: none;
+  animation: cycle2 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim3 {
+  display: none;
+  animation: cycle3 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim4 {
+  display: none;
+  animation: cycle4 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim5 {
+  display: none;
+  animation: cycle5 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider:hover li {
+  display: none;
+  animation-play-state: paused;
+  transition: 2s;
+  }
+
+	/*Menú*/
+
+  .cuerpo .contenedor-barra-navegacion{
+	height: 30px;
+	transition: 2s;
+	clear: both;
+   }
+
+  .navbar {
+   overflow: hidden;
+   background-color: orange;
+   position: relative;
+   top: 0px;
+   width: 100%;
+   transition: 2s;
+   }
+
+   .navbar a {
+   float: left;
+   display: block;
+   color: #777777;
+   text-align: center;
+   padding: 4px 5px;
+   text-decoration: none;
+   font-size: 17px;
+   transition: 2s;
+   }
+
+   .navbar a:hover {
+   background-color: #535353;
+   color: white;
+   transition: 2s;
+   }
+
+
+	/*Buscador-Menú*/
+   * {
+   box-sizing: border-box;
+   }
+
+   input[type=text] {
+   width: 170px;
+   height: 30px;
+   box-sizing: border-box;
+   border: 2px solid grey;
+   border-radius: 4px;
+   font-size: 12px;
+   background-color: orange;
+   background-image: url('searchicon.png');
+   background-position: 10px 10px; 
+   background-repeat: no-repeat;
+   padding: 12px 20px 12px 40px;
+   margin-top: 2px;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+   transition: 2s;
+   }
+
+   input[type=text]:focus {
+   width: 30%;
+   }
+
+   .cuerpo .barra-de-navegacion .contenedor-iconos{
+	height: 30px;
+	background-color: orange;
+	color: #777777;
+	padding: 3px;
+	margin: 5px 10px;
+	box-sizing: border-box;
+	border: none;
+ 	color: white;
+ 	cursor: pointer;
+ 	clear: both;
+	}
+
+	/*Reproductor*/
+
+   .cuerpo .contenedor-reproductor{
+	width: 100%;
+	height: 160px;
+	background-color: orange;
+	padding: 5px;
+	margin: 85px 0px;
+	margin-bottom: 15px;
+	float: right;
+	text-align: center;
+	transition: 2s;
+	clear: both;
+	}
+	.cuerpo .contenedor-reproductor p{
+	display: none;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.contenedor{
+	width: 700px;
+	margin-left: 10px;
+	margin-right: 10px;
+	transition: 2s;
+	}
+	.fila{
+	padding-bottom: 20px;
+	margin-top: 40px;
+	}
+
+	.columna-12{
+	width: 67%;
+	margin-bottom: 15px;
+	float: left;
+	padding: 10px 5px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #333333;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-12 h5{
+	display: none;
+	transition: 2s;
+	}
+
+	.columna-6{
+	width: 34%;
+	margin-top: 20px;
+	margin-bottom: 45px;
+	float: left;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #777777;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-6 h6{
+	display: none;
+	transition: 2s;
+	}
+
+	.cuerpo .contenedor-mas-leido{
+	width: 100%;
+	height: 200px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+	
+	.cuerpo .contenedor-mas-escuchado{
+	width: 100%;
+	height: 230px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.columna-3{
+	width: 35%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	float: left;
+	padding: 5px 15px;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #777777;
+	transition: 2s;
+	}
+
+	/*Diapositivas Destacado*/
+	/* Darker background on mouse-over */
+	.button:hover {
+  	background-color: grey;
+	}
+	* {box-sizing:border-box}
+
+	/* Slideshow container */
+	.slideshow-container {
+  	max-width: 500px;
+  	position: relative;
+ 	margin: auto;
+ 	clear: both;
+ 	transition: 2s;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+  	display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+  	cursor: pointer;
+  	position: absolute;
+  	top: 50%;
+ 	width: auto;
+ 	margin-top: -22px;
+  	padding: 16px;
+  	color: #777777;
+  	font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+  	border-radius: 0 3px 3px 0;
+  	user-select: none;
+  	transition: 2s;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+  	right: 0;
+  	border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+ 	background-color: orange;
+	}
+
+	/* Caption text */
+	.text {
+  	color:#777777;
+  	font-size: 20px;
+  	margin: 15px 20;
+  	padding: 8px 12px;
+  	position: absolute;
+  	bottom: 8px;
+  	width: 100%;
+  	text-align: center;
+  	transition: 2s;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+  	color: #777777;
+  	font-size: 12px;
+  	padding: 8px 12px;
+  	position: absolute;
+  	top: 0;
+  	transition: 2s;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	cursor: pointer;
+  	height: 15px;
+ 	width: 15px;
+  	margin: 0 2px;
+  	background-color: #bbb;
+  	border-radius: 50%;
+  	display: inline-block;
+  	transition: background-color 0.6s ease;
+  	transition: 2s;
+	}
+	
+	.active, .dot:hover {
+  	background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+  	-webkit-animation-name: fade;
+  	-webkit-animation-duration: 1.5s;
+  	animation-name: fade;
+  	animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+ 	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	@keyframes fade {
+  	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	footer{
+	width: 100%;
+	background-color: orange;
+	transition: 2s;
+	}
+	footer .fila{
+	width: 100%;
+	transition: 2s;
+	}
+	footer .fila .columna-6{
+	width: calc(100% - 20px);
+	float: left;
+	margin-bottom: 5px;
+	padding: 5;
+	text-align: center;
+	transition: 2s;
+	}
+	footer .copyright{
+	width: 100%;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	background-color: black;
+	clear: both;
+	transition: 2s;
+	}
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Notebook / monitor pequeño */
+  p {
+  	text-indent: 25px;
+	}
+
+  header{
+  	height: 100px;
+  	transition: 2s;
+  }
+  header .logo{
+  	width: 100px;
+  	height: 80px;
+  	float: left;
+  	transition: 2s;
+  }
+  header .info{
+	width: calc(75% - 100px);
+	float: right;
+	margin: 20px 15px;
+	color: #ff8d00;
+	font-family: 'Niconne', cursive;
+  }
+
+  header .info .titulo{
+  	width: calc(100% - 30px);
+  	font-size: 30px;
+  	float: right;
+  	transition: 2s;
+  	text-align: right;
+  	clear: both;
+  }
+  header .info .titulo .titulo2{
+  	display: none;
+  	transition: 2s;
+  }
+
+  header .info .iconos{
+  	width: 70px;
+	height: 20px;
+	float: right;
+	margin: 5px;
+	margin-top: 5px;
+	text-align: left;
+	font-size: 10px;
+	transition: 2s;
+	clear: both;
+  }
+
+  .cuerpo{
+	width: 100%;
+	clear: both;
+	transition: 2s;
+  }
+  .cuerpo .contenedor-barra-giratoria{
+  	display: none;
+  	transition: 2s;
+  }
+  .content-slider {
+  display: none;
+  transition: 2s;
+  }
+  .slider {
+  display: none;
+  transition: 2s;
+  }
+
+  .mask {
+  display: none;
+  overflow: hidden;
+  height: 50px;
+  transition: 2s;
+  }
+
+  .slider ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transition: 2s;
+  }
+
+  .slider li {
+  display: none;
+  width: 680px;
+  height: 50px;
+  position: absolute;
+  top: -325px;
+  list-style: none;
+  transition: 2s;
+  }
+
+  .slider .quote {
+  display: none;
+  font-size: 16px;
+  font-style: italic;
+  transition: 2s;
+  }
+
+  .slider .source {
+  display: none;
+  font-size: 12px;
+  text-align: left;
+  transition: 2s;
+  }
+
+  .slider li.anim1 {
+  display: none;
+  animation: cycle 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim2 {
+  display: none;
+  animation: cycle2 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim3 {
+  display: none;
+  animation: cycle3 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim4 {
+  display: none;
+  animation: cycle4 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider li.anim5 {
+  display: none;
+  animation: cycle5 13s linear infinite;
+  transition: 2s;
+  }
+
+  .slider:hover li {
+  display: none;
+  animation-play-state: paused;
+  transition: 2s;
+  }
+
+	/*Menú*/
+
+  .cuerpo .contenedor-barra-navegacion{
+	height: 30px;
+	transition: 2s;
+	clear: both;
+   }
+
+  .navbar {
+   overflow: hidden;
+   background-color: orange;
+   position: relative;
+   top: 0px;
+   width: 100%;
+   transition: 2s;
+   }
+
+   .navbar a {
+   float: left;
+   display: block;
+   color: #777777;
+   text-align: center;
+   padding: 4px 5px;
+   text-decoration: none;
+   font-size: 17px;
+   transition: 2s;
+   }
+
+   .navbar a:hover {
+   background-color: #535353;
+   color: white;
+   transition: 2s;
+   }
+
+
+	/*Buscador-Menú*/
+   * {
+   box-sizing: border-box;
+   }
+
+   input[type=text] {
+   width: 170px;
+   height: 30px;
+   box-sizing: border-box;
+   border: 2px solid grey;
+   border-radius: 4px;
+   font-size: 12px;
+   background-color: orange;
+   background-image: url('searchicon.png');
+   background-position: 10px 10px; 
+   background-repeat: no-repeat;
+   padding: 12px 20px 12px 40px;
+   margin-top: 2px;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+   transition: 2s;
+   }
+
+   input[type=text]:focus {
+   width: 30%;
+   }
+
+   .cuerpo .barra-de-navegacion .contenedor-iconos{
+	height: 30px;
+	background-color: orange;
+	color: #777777;
+	padding: 3px;
+	margin: 5px 10px;
+	box-sizing: border-box;
+	border: none;
+ 	color: white;
+ 	cursor: pointer;
+ 	clear: both;
+	}
+
+	/*Reproductor*/
+
+   .cuerpo .contenedor-reproductor{
+	width: 100%;
+	height: 160px;
+	background-color: orange;
+	padding: 5px;
+	margin: 85px 0px;
+	margin-bottom: 15px;
+	float: right;
+	text-align: center;
+	transition: 2s;
+	clear: both;
+	}
+	.cuerpo .contenedor-reproductor p{
+	display: none;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.contenedor{
+	width: 700px;
+	margin-left: 10px;
+	margin-right: 10px;
+	transition: 2s;
+	}
+	.fila{
+	padding-bottom: 20px;
+	margin-top: 40px;
+	}
+
+	.columna-12{
+	width: 67%;
+	margin-bottom: 15px;
+	float: left;
+	padding: 10px 5px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #333333;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-12 h5{
+	display: none;
+	transition: 2s;
+	}
+
+	.columna-6{
+	width: 34%;
+	margin-top: 20px;
+	margin-bottom: 45px;
+	float: left;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #777777;
+	transition: 2s;
+	}
+
+	.contenedor .fila .columna-6 h6{
+	display: none;
+	transition: 2s;
+	}
+
+	.cuerpo .contenedor-mas-leido{
+	width: 100%;
+	height: 200px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+	
+	.cuerpo .contenedor-mas-escuchado{
+	width: 100%;
+	height: 230px;
+	background-color: orange;
+	padding: 15px;
+	margin: 10px;
+	float: right;
+	box-sizing: border-box;
+	text-align: auto;
+	transition: 2s;
+	}
+
+	/*Grilla*/
+	.columna-3{
+	width: 35%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	float: left;
+	padding: 5px 15px;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #777777;
+	transition: 2s;
+	}
+
+	/*Diapositivas Destacado*/
+	/* Darker background on mouse-over */
+	.button:hover {
+  	background-color: grey;
+	}
+	* {box-sizing:border-box}
+
+	/* Slideshow container */
+	.slideshow-container {
+  	max-width: 500px;
+  	position: relative;
+ 	margin: auto;
+ 	clear: both;
+ 	transition: 2s;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+  	display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+  	cursor: pointer;
+  	position: absolute;
+  	top: 50%;
+ 	width: auto;
+ 	margin-top: -22px;
+  	padding: 16px;
+  	color: #777777;
+  	font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+  	border-radius: 0 3px 3px 0;
+  	user-select: none;
+  	transition: 2s;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+  	right: 0;
+  	border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+ 	background-color: orange;
+	}
+
+	/* Caption text */
+	.text {
+  	color:#777777;
+  	font-size: 20px;
+  	margin: 15px 20;
+  	padding: 8px 12px;
+  	position: absolute;
+  	bottom: 8px;
+  	width: 100%;
+  	text-align: center;
+  	transition: 2s;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+  	color: #777777;
+  	font-size: 12px;
+  	padding: 8px 12px;
+  	position: absolute;
+  	top: 0;
+  	transition: 2s;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	cursor: pointer;
+  	height: 15px;
+ 	width: 15px;
+  	margin: 0 2px;
+  	background-color: #bbb;
+  	border-radius: 50%;
+  	display: inline-block;
+  	transition: background-color 0.6s ease;
+  	transition: 2s;
+	}
+	
+	.active, .dot:hover {
+  	background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+  	-webkit-animation-name: fade;
+  	-webkit-animation-duration: 1.5s;
+  	animation-name: fade;
+  	animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+ 	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	@keyframes fade {
+  	from {opacity: .4}
+  	to {opacity: 1}
+	}
+
+	footer{
+	width: 100%;
+	background-color: orange;
+	transition: 2s;
+	}
+	footer .fila{
+	width: 100%;
+	transition: 2s;
+	}
+	footer .fila .columna-6{
+	width: calc(100% - 20px);
+	float: left;
+	margin-bottom: 5px;
+	padding: 5;
+	text-align: center;
+	transition: 2s;
+	}
+	footer .copyright{
+	width: 100%;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	background-color: black;
+	clear: both;
+	transition: 2s;
+	}
+}
 }
 @media (min-width: 1200px) {
   /* Pc escritorio / monitor grande */
